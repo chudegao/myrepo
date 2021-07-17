@@ -42,7 +42,7 @@ jobs:
     - name: Install dependencies, ONNX ${{ matrix.onnx-version }}
       run: |
         pip install pytest tabulate ${{ matrix.tensorflow-version }}
-        if [ ${{ matrix.onnx-version }} == "development" ];then
+        if [ "${{ matrix.onnx-version }}" == "development" ];then
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
           tmp_dir=$(mktemp -d)
           git clone https://github.com/onnx/onnx.git $tmp_dir
