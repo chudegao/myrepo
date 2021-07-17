@@ -55,7 +55,7 @@ jobs:
         else
           pip install ${{ matrix.onnx-version }}
         fi
-        pip install git+https://github.com/onnx/onnx.git@master
+        pip install git+https://github.com/onnx/onnx-tensorflow.git@master
     - name: Run Backend tests
       run: |
         python -m unittest discover test -v
